@@ -64,6 +64,11 @@ export default (io: Summon.IO) => {
   // Bob provides a number called 'b'
   const b = io.input('bob', 'b', summon.number());
 
+  // You can also add more inputs/parties.
+  // If the party doesn't provide input, use `io.addParty('partyName');`.
+  // (Parties that don't provide input still get outputs with a cryptographic
+  // guarantee that they are correct.)
+
   let result;
 
   // This seems like a branch that I just said is not allowed, but this is just
@@ -170,8 +175,59 @@ For clarity, a complete version of the example above is provided as
 | [`emp-wasm-engine`](https://github.com/privacy-scaling-explorations/emp-wasm-engine/) | Secure MPC using authenticated garbling | [`emp-wasm`](https://github.com/privacy-scaling-explorations/emp-wasm), [`emp-ag2pc`](https://github.com/emp-toolkit/emp-ag2pc/), [`emp-agmpc`](https://github.com/emp-toolkit/emp-agmpc/) |
 | [`mpz-ts`](https://github.com/privacy-scaling-explorations/mpz-ts)                      | Semi-honest 2PC                         | [`mpz`](https://github.com/privacy-scaling-explorations/mpz)                                                                                                           |
 
-## Example Projects
+## [MPC Hello](https://mpc.pse.dev/apps/hello)
 
-- [MPC Hello](https://mpc.pse.dev/apps/hello)
-- [2PC is for Lovers](https://mpc.pse.dev/apps/2pc-is-for-lovers)
-- [MPC Lizard Spock](https://mpc.pse.dev/apps/lizard-spock)
+The "Hello World" of MPC. It's a
+[template](https://github.com/privacy-scaling-explorations/mpc-hello) with
+several variations (eg client-client, client-server), and just calculates which
+party provided the larger number.
+
+<a href="https://mpc.pse.dev/apps/hello">
+  <img src="https://mpc.pse.dev/img/mpc-hello.png" alt="MPC Hello Preview" width="300">
+</a>
+
+## [Ballpark](https://mpc.pse.dev/apps/ballpark)
+
+The better way to compare compensation. Similar to MPC Hello, but with a nicer
+UI, and provides a configurable "about the same" threshold instead of just
+indicating which number was larger.
+
+<a href="https://mpc.pse.dev/apps/ballpark">
+  <img src="https://mpc.pse.dev/img/ballpark-card.svg" alt="Ballpark Preview" width="300">
+</a>
+
+Video explaining Ballpark:
+
+<a href="https://www.youtube.com/watch?v=uLdkfNNdZQo">
+  <img src="https://img.youtube.com/vi/uLdkfNNdZQo/hqdefault.jpg" alt="Ballpark Video Preview" width="300">
+</a>
+
+## [JumboSwap](https://mpc.pse.dev/apps/jumboswap)
+
+Facilitates simple 1-for-1 trades within groups. Showcases N-party capability.
+
+<a href="https://mpc.pse.dev/apps/jumboswap">
+  <img src="https://mpc.pse.dev/img/jumboswap.svg" alt="JumboSwap Preview" width="300">
+</a>
+
+## [MPC Lizard Spock](https://mpc.pse.dev/apps/lizard-spock)
+
+Like rock-paper-scissors, but with more options. Popularized by The Big Bang Theory, this variant of the classic game is more fun with MPC, since it reveals the winner but maintains the mystery of what how your opponent played.
+
+<a href="https://mpc.pse.dev/apps/lizard-spock">
+  <img src="https://mpc.pse.dev/img/mpc-lizard-spock.svg" alt="MPC Lizard Spock Preview" width="300">
+</a>
+
+## [2PC is for Lovers](https://mpc.pse.dev/apps/2pc-is-for-lovers)
+
+Secretly in love with your best friend? Find out if they love you back using MPC 🤓. This way, if they just want to be friends, your love won't be exposed, ruining the friendship. Of course, you'll need some excuse for why you should play this game together 🤷‍♂️. This is really just a minimal demo of MPC, requiring a single AND gate.
+
+<a href="https://mpc.pse.dev/apps/2pc-is-for-lovers">
+  <img src="https://mpc.pse.dev/img/2pc-is-for-lovers.png" alt="2PC is for Lovers Preview" width="300">
+</a>
+
+Inspired by this talk by Barry Whitehat:
+
+<a href="https://www.youtube.com/watch?v=PzcDqegGoKI">
+  <img src="https://img.youtube.com/vi/PzcDqegGoKI/hqdefault.jpg" alt="Ballpark Video Preview" width="300">
+</a>
